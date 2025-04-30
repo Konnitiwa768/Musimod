@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.Rarity;
 
-public class ModSpawnEggs {
+public class MusiModSpawnEggs {
     public static final Item CENTIPEDE_SPAWN_EGG = registerSpawnEgg("centipede_spawn_egg",
         MusiModEntities.CENTIPEDE,
         0x553311, // 背景色（茶色）
