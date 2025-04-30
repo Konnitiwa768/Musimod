@@ -8,9 +8,15 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.LootConditionTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class CentipedeEntity extends HostileEntity {
 
@@ -46,5 +52,17 @@ public class CentipedeEntity extends HostileEntity {
     @Override
     public boolean isFireImmune() {
         return true;
+    }
+
+    // ドロップアイテムの設定
+    @Override
+    protected void dropLoot(LootContext.Builder context) {
+        super.dropLoot(context); // デフォルトのドロップアイテムを追加
+
+        Random random = context.getWorld().getRandom();
+        if (random.nextDouble() <= 0.147) { // 14.7%の確率でダイヤモンドをドロップ
+            int amount = random.nextInt(3) + 1; // 1〜3個
+            this.dropItem(Items.DIAMOND, amount);
+        }
     }
 }
