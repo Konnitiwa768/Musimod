@@ -16,6 +16,13 @@ public class MusiModEntities {
             .dimensions(EntityDimensions.fixed(0.5f, 1.0f)) // 長さはモデルで制御
             .build()
     );
+    public static final EntityType<FlyEntity> FLY = Registry.register(
+        Registry.ENTITY_TYPE,
+        new Identifier("musimod", "fly"),
+        FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CentipedeEntity::new)
+            .dimensions(EntityDimensions.fixed(2.5f, 2.5f)) // 長さはモデルで制御
+            .build()
+    );
 
     public static void register() {
         // 呼び出し専用
