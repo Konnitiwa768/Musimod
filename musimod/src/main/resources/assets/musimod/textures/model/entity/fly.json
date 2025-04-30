@@ -1,0 +1,47 @@
+{
+  "parent": "entity/geometry",
+  "textures": {
+    "layer0": "modid:textures/entity/fly/body",
+    "layer1": "modid:textures/entity/fly/head",
+    "layer2": "modid:textures/entity/fly/legs",
+    "layer3": "modid:textures/entity/fly/wings"
+  },
+  "elements": [
+    {
+      "from": [ -4.0, 0.0, -4.0 ],
+      "to": [ 4.0, 8.0, 4.0 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 8, 8 ], "texture": "#layer0" },
+        "south": { "uv": [ 0, 0, 8, 8 ], "texture": "#layer0" },
+        "east": { "uv": [ 0, 0, 8, 8 ], "texture": "#layer0" },
+        "west": { "uv": [ 0, 0, 8, 8 ], "texture": "#layer0" }
+      }
+    },
+    {
+      "from": [ -2.0, 8.0, -2.0 ],
+      "to": [ 2.0, 12.0, 2.0 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 4, 4 ], "texture": "#layer1" },
+        "south": { "uv": [ 0, 0, 4, 4 ], "texture": "#layer1" },
+        "east": { "uv": [ 0, 0, 4, 4 ], "texture": "#layer1" },
+        "west": { "uv": [ 0, 0, 4, 4 ], "texture": "#layer1" }
+      }
+    },
+    {
+      "from": [ -1.0, 8.0, -1.0 ],
+      "to": [ 1.0, 12.0, 1.0 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 2, 4 ], "texture": "#layer2" },
+        "south": { "uv": [ 0, 0, 2, 4 ], "texture": "#layer2" }
+      }
+    },
+    {
+      "from": [ -8.0, 8.0, -3.0 ],
+      "to": [ 8.0, 9.0, 3.0 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 6 ], "texture": "#layer3" },
+        "south": { "uv": [ 0, 0, 16, 6 ], "texture": "#layer3" }
+      }
+    }
+  ]
+}
