@@ -1,6 +1,6 @@
 {
   "textures": {
-    "layer0": "musi"
+    "layer0": "musimod:textures/entity/centipede"
   },
   "elements": [
     // 体節1~10
