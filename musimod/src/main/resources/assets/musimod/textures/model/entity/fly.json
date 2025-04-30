@@ -1,10 +1,10 @@
 {
   "parent": "entity/geometry",
   "textures": {
-    "layer0": "modid:textures/entity/fly/body",
-    "layer1": "modid:textures/entity/fly/head",
-    "layer2": "modid:textures/entity/fly/legs",
-    "layer3": "modid:textures/entity/fly/wings"
+    "layer0": "modid:textures/entity/fly/1",
+    "layer1": "modid:textures/entity/fly/1",
+    "layer2": "modid:textures/entity/fly/2",
+    "layer3": "modid:textures/entity/fly/3"
   },
   "elements": [
     {
