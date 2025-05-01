@@ -11,9 +11,13 @@ public class FlyModel extends SinglePartEntityModel<FlyEntity> {
         new Identifier("musimod", "fly"), "main");
 
     private final ModelPart root;
+    private final ModelPart leg;
+    private final ModelPart wing;
 
     public FlyModel(ModelPart root) {
         this.root = root;
+        this.leg = root.getChild("leg");
+        this.wing = root.getChild("wing");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -40,35 +44,16 @@ public class FlyModel extends SinglePartEntityModel<FlyEntity> {
     }
 
     @Override
-    public void setAngles(FlyEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {}
+    public void setAngles(FlyEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        this.leg.pitch = (float) Math.sin(animationProgress * Math.PI) * 0.785f;
+        this.wing.roll = (float) Math.sin(animationProgress * Math.PI * 2) * 0.5f;
+    }
 
     @Override
     public ModelPart getPart() {
-        repackage com.sakalti.musimod.entity.model;
-
-import com.sakalti.musimod.entity.FlyEntity;
-import net.minecraft.client.model.*;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.util.Identifier;
-
-public class FlyModel extends SinglePartEntityModel<FlyEntity> {
-    public static final EntityModelLayer LAYER_LOCATION = new EntityModelLayer(
-        new Identifier("musimod", "fly"), "main");
-
-    private final ModelPart root;
-
-    // 複数の足と羽を持つ構造を定義
-    private final ModelPart[] legs = new ModelPart[6]; // 6本の足
-    private final ModelPart[] wings = new ModelPart[2]; // 2つの羽
-
-    public FlyModel(ModelPart root) {
-        this.root = root;
-
-        // 足のモデル設定
-        for (int i = 0; i < 6; i++) {
-            legs[i] = root.getChild("leg_" + i);
-        }
+        return root;
+    }
+}
 
         // 羽のモデル設定
         wings[0] = root.getChild("wing_left");
